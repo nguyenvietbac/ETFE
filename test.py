@@ -704,9 +704,16 @@ def main():
 		if count == height_lame:
 			count = 0
 			chain_num += 1
-
+	chain_num -= 1
 
 	list_atoms_in_chains.extend(atoms_list)
+	st_left = int(len(atoms_list)/height_lame)
+	if (len(atoms_list)%height_lame) == 0:
+		for x in range(st_left):
+			list_chains_length.append(height_lame)
+	else:
+		print('string length are not correct')
+
 	type_arr = 1
 
 	list_atoms_in_chains[0]['type'] = 1
@@ -722,7 +729,8 @@ def main():
 	# atom1 = atoms_list[-1]
 	# atom2 = atoms_list[-2]
 
-
+	print(chain_num)
+	print(len(list_chains_length))
 	# print to file
 
 	# file = open("lame.dat", "w")
@@ -798,7 +806,7 @@ def main():
 	atom_1 = 1
 	atom_2 = 2
 	for x in range(chain_num):
-		c_length = list_chains_length[x-1]
+		c_length = list_chains_length[x]
 		for y in range(c_length - 1):
 			file.write("%10i%10i%10i%10i\n" % (count, 1, atom_1, atom_2))
 			count += 1
@@ -814,7 +822,7 @@ def main():
 	atom_2 = 2
 	atom_3 = 3
 	for x in range(chain_num):
-		c_length = list_chains_length[x-1]
+		c_length = list_chains_length[x]
 		for y in range(c_length - 2):
 			file.write("%10i%10i%10i%10i%10i\n" % (count, 1, atom_1, atom_2, atom_3))
 			count += 1
@@ -835,7 +843,7 @@ def main():
 	atom_4 = 4
 
 	for x in range(chain_num):
-		c_length = list_chains_length[x-1]
+		c_length = list_chains_length[x]
 		for y in range(c_length - 3):
 			file.write("%10i%10i%10i%10i%10i%10i\n" % (count, 1, atom_1, atom_2, atom_3, atom_4))
 			count += 1
