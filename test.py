@@ -797,7 +797,7 @@ def main():
 		xx['x1'] = b_length*np.sqrt(2)*(xx['x1'] + a[1])
 		xx['x2'] = b_length*np.sqrt(2)*(xx['x2'] + a[2])
 		count += 1 
-		file.write("%f %f %f %f %f %f\n" % (int(count), int(xx['chain']), int(xx['type']), xx['x0'], xx['x1'], xx['x2']))
+		file.write("%10i%10i%10i%10.4f%10.4f%10.4f\n" % (int(count), int(xx['chain']), int(xx['type']), xx['x0'], xx['x1'], xx['x2']))
 
 	file.write("\n")
 	file.write("Bonds \n")
