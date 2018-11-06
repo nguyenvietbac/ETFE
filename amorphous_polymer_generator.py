@@ -226,8 +226,15 @@ def main():
 			length_chain = 0
 			chains_num += 1
 			ini_chain = 1
-
-			
+	count = 0 
+	for x in range(len(list_atoms_in_chains)):
+		for y in range(x+1,len(list_atoms_in_chains)):
+			if list_atoms_in_chains[x]['x0'] == list_atoms_in_chains[y]['x0']:
+				if list_atoms_in_chains[x]['x1'] == list_atoms_in_chains[y]['x1']:
+					if list_atoms_in_chains[x]['x2'] == list_atoms_in_chains[y]['x2']:
+						if list_atoms_in_chains[x]['x3'] == list_atoms_in_chains[y]['x3']:
+							count = count + 1
+							print(list_atoms_in_chains[x])
 	# for y in list_atoms_in_chains:
 	# 	# print(y)
 	# 	print(type(y))
